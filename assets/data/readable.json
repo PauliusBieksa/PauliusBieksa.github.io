@@ -1,0 +1,23 @@
+data = "[{
+		'name' = 'GPU n-body Simulation',
+		'description' = 'blabla'
+		'imagePath' = 'assets/images/koala.jpg'
+		'url' = 'pages/parallel.html'
+	},
+	{
+		'name' = 'GPU n-body Simulation',
+		'description' = 'blabla'
+		'imagePath' = 'assets/images/koala.jpg'
+		'url' = 'pages/parallel.html'
+	},
+	{
+		'name' = 'GPU n-body Simulation',
+		'description' = 'blabla'
+		'imagePath' = 'assets/images/koala.jpg'
+		'url' = 'pages/parallel.html'	},	{
+		'name' = 'GPU n-body Simulation',
+		'description' = 'blabla'
+		'imagePath' = 'assets/images/koala.jpg'
+		'url' = 'pages/parallel.html'
+	}
+]";

@@ -6,7 +6,29 @@ html {
 }
 
 .profile {
-	width: 100%;
-	margin:auto;
-	text-align: center;
+	margin-top: 5%;
+}
+.card{
+	margin-right: 0.85em;
+	margin-left: 0.85em;
+}
+
+.tag {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 450;
+  font-size: 1em;
+  display: inline-block;
+  padding: 0.24em 0.62em 0.24em 0.62em;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.tag_container {
+	color: #fff;
+    position: absolute;
+    top: 0px;
+	margin: 0.4em;
 }
