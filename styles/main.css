@@ -26,6 +26,11 @@ html {
   border-radius: 2px;
 }
 
+.selected {
+  background-color: #ffffff;
+  color: #000000;
+}
+
 .tag_container {
 	color: #fff;
     position: absolute;

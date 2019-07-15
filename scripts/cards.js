@@ -1,6 +1,7 @@
 let card_contents = JSON.parse(data);
 let all_cards = [];
 let all_tags = new Set();
+let selected_tags = new Set();
 
 // Generate all cards
 for(single in card_contents)
@@ -41,6 +42,7 @@ for(single in card_contents)
 		tag_container.appendChild(tag_element);
 	}
 	
+	// Add title
 	let title = document.createElement('span');
 	title.textContent = card_contents[single]['title'];
 	title.classList.add("card-title");
@@ -56,25 +58,28 @@ for(single in card_contents)
 	p_container.appendChild(para);
 }
 	
-	
+
+// Generate tag selection buttons
 let tag_selector_container = document.getElementById('all_tags');
-console.log(tag_selector_container);
 for (let tag of all_tags)
 {
 	let tag_element = document.createElement('a');
 	tag_element.textContent = tag;
+	tag_element.id = tag;
 	tag_element.classList.add('tag', 'waves-effect', 'waves-light');
+	tag_element.addEventListener('click', select_tag);
 	tag_selector_container.appendChild(tag_element);
-	console.log('yo');
 }
 	
 
+// Show all cards on page load
 document.addEventListener('DOMContentLoaded', function()
 {
-	populate_cards(['C++', 'GPU']);
+	populate_cards([]);
 }, false);
 
 
+// Put cards on page based on tags selected. Emty list puts all tags on the page
 function populate_cards(displayed_tags)
 {
 	// Delete contents of the container first
@@ -86,8 +91,6 @@ function populate_cards(displayed_tags)
 	
     let first = true;
 	let row;
-	
-	
 	
 	for(c in all_cards)
 	{
@@ -101,14 +104,30 @@ function populate_cards(displayed_tags)
 			row.classList.add("row");
 			card_container.appendChild(row);
 		}
-	
 		first = !first;
 		
-		
 		row.appendChild(all_cards[c]);
-		
 	}
 };
+
+
+//
+function select_tag()
+{
+	let tag = this;
+	if (selected_tags.has(tag.id))
+	{
+		selected_tags.delete(tag.id);
+		this.classList.remove('selected');
+	}
+	else
+	{
+		selected_tags.add(tag.id);
+		this.classList.add('selected');
+	}
+	
+	populate_cards(Array.from(selected_tags));
+}
 
 
 
