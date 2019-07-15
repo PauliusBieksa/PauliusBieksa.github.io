@@ -61,7 +61,11 @@ for(single in card_contents)
 
 // Generate tag selection buttons
 let tag_selector_container = document.getElementById('all_tags');
-for (let tag of all_tags)
+let tag_array = Array.from(all_tags);
+tag_array.sort(function (a, b) {
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+});
+for (let tag of tag_array)
 {
 	let tag_element = document.createElement('a');
 	tag_element.textContent = tag;
