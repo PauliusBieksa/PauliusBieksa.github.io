@@ -6,11 +6,26 @@ html {
 }
 
 .profile {
-	margin-top: 5%;
+	margin-top: 10%;
 }
-.card{
+
+#all_tags {
+	margin-top: 5%;
+	margin-bottom: 6%;
+}
+
+.article_title {
+	margin-top: 8%;
+	margin-bottom: 6%;
+}
+
+.card {
 	margin-right: 0.85em;
 	margin-left: 0.85em;
+}
+
+.card .card-content {
+	height: 200%;
 }
 
 .tag {
