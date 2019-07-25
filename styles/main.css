@@ -22,6 +22,16 @@ h5 {
 	margin-bottom: 6%;
 }
 
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.footnote_links {
+	margin-top: 2em;
+	font-size: 1.25em;
+}
+
 .card {
 	margin-right: 0.85em;
 	margin-left: 0.85em;

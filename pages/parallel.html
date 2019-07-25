@@ -26,6 +26,7 @@
 				<div class="col s0 m1 l2"></div>
 				<article class="col s12 m10 l8">
 					<img src="../assets/images/cuda_simulation_400_cropped.gif">
+					<h5>Introduction</h5>
 					<p>Software optimisation is a field unto itself. There are many ways 
 						to approach this problems in these field and all of them require 
 						deep understanding of the code being optimised and the hardware
@@ -63,15 +64,32 @@
 							<li><i>The next steps are done concurently on the GPU</i>
 								<ol type="i">
 									<li>Calculate the force exerted by each other particle based on their current state</li>
-									<li>Store the froces to the correct GPU memory location</li>
+									<li>Store the forces to the correct GPU memory location</li>
 								</ol>
 							</li>
 							<li>Send the calculated figures back to the main memory</li>
 							<li>Convert the forces from float array to vectors</li>
 							<li>Calculate the physics step with the forces calculated on the GPU</li>
 						</ol>
-						The last step is done sequentially because it has O(n) complexity and therefore has impact on overall execution time.
+						After some experimentation it was found that it is faster to perform the last step sequentially on the CPU. Since the 
+						physics step has O(n) complexity it can be done quite quickly on the CPU.
 					</p>
+					<h5>Results</h5>
+					<p>
+						The GPU implementation achieved some very good results. An almost six-fold speedup was achieved when simulating 4000 bodies, 
+						whith a trend towards more speedup when simulating more bodies. It is likely that a higher speedup would be achieved simulating 
+						more bodies, but due to limited time for testing this was not verified.
+					</p>
+					<p>
+						The results for the OpenMP simulation were a bit more complex. Some speedup was gained on some machines while on others 
+						the simulation ran slower. Particularly interesting was a revelation that adding a wait command (~100)ms improved overall performance 
+						on some Windows machines. There was no CPU temperature difference or declocking to explain it and the exact reason for 
+						this strange behavior was not found in the time allotted.
+					</p>
+					<div class="footnote_links">
+						<a target="_blank" href="https://github.com/PauliusBieksa/n-Body_simulation">Git repository</a> | 
+						<a target="_blank" href="../Assets/PDFs/CPS_CW2_Report.pdf">Full report</a></p>
+					</div>
 				</article>
 			</div>
 		</div>
