@@ -13,7 +13,7 @@ for (single of card_contents)
 		for (tag in single['tags'])
 		{
 			console.log('if');
-			let tag_element = document.createElement("a");
+			let tag_element = document.createElement("span");
 			tag_element.textContent = single['tags'][tag];
 			tag_element.classList.add('tag');
 			let p = document.getElementById('date_stamp');

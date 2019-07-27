@@ -36,7 +36,7 @@ for(single in card_contents)
 	for (tag in card_contents[single]['tags'])
 	{
 		all_tags.add(card_contents[single]['tags'][tag]);
-		let tag_element = document.createElement("a");
+		let tag_element = document.createElement("span");
 		tag_element.textContent = card_contents[single]['tags'][tag];
 		tag_element.classList.add('tag');
 		tag_container.appendChild(tag_element);
