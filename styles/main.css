@@ -34,6 +34,10 @@ article h5 {
 	margin-top: 1.5em;
 }
 
+.row {
+	width: 100%;
+}
+
 .profile {
 	margin-top: 10%;
 }

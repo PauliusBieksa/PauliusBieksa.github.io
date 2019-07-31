@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Newton's Bounty</title>
+		<meta name="author" content="Paulius Bieksa">
+		<meta name="description" content="A game made using SFML and Box2D. Engine made with C++ using the Entity-Component model.">
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="../styles/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/slideshow.css">
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row center article_title">
+				<h5 id="page_title">Newton's Bounty</h5>
+				<!-- Asociated tags are generated here by pages_common.js -->
+				<p id="date_stamp"><time datetime="2018-04">April 2018</time></p>
+			</div>
+			
+			<div class="row left article">
+				<!-- Empty column to center the article -->
+				<div class="col s0 m1 l2"></div>
+				<!---->
+				<article class="col s12 m10 l8">
+					<img src="../assets/images/newtons_bounty/games_eng_2_reduced.gif">
+					
+					<h5>Introduction</h5>
+					<p>This project was done in collaboration with Grant Anderson, a fellow student, as part of the Games Engineering module. 
+						The goal was to gain an understanding of game engine programming as well as making a game from start to finish. 
+						Both me and my colleague participated in all parts of the project from writing the design document to programming.
+					</p>
+					
+					<h5>The game</h5>
+					<p>The game is a top-down spaceship battle for 1 or 2 players. The movement is designed to adhere to Newton's first law. 
+						The ship players control has 6 thrusters which apply force on the ship when activated. Each player has three weapons 
+						and a defensive turret for shooting down projectiles. The first player to destroy the opponent's ship wins.
+					</p>
+					<p>The fun of the game comes from trying to balance defense and offense, and using movement to supplement both.
+					</p>
+					<h5>The engine</h5>
+					<p>The engine for the game was programmed from scratch over the course of the same GamesEngineering module. Two large parts 
+						of the engine used free libraries so a greater focus could be given to engine architecture. Those parts are the graphics 
+						system, which uses SFML, and physics system - using Box2D.
+					</p>
+					<p>The engine is designed to use the Entity-Component model at it's core. This means that every object in the game is an entity 
+						and every behavior, attribute of an object, etc. is a component. This allows for greater flexibility when making a game. It also 
+						makes the object and component hierarchy intuitive for developers.
+					</p>
+					<h5>Lessons learned</h5>
+					<p>The biggest lesson is that polish takes time and lots of testing. While the final game had a few bugs, the biggest issue at the end 
+						was the lack of tuning for various game mechanics like weapon damage, speed, and most of all the ships were just to difficult to control. 
+						The animation for engine burn is very hard to spot, which makes it difficult to see which way the player is accelerating.
+					</p>
+					<p>On the bright side, working with a partner was very helpful. Besides the obvious advantage of being able to do more work over the 
+						alloted time, having a second opinion helped plan the development of the game.
+					</p>
+					
+					<div class="footnote_links">
+						<a target="_blank" href="https://github.com/Granderson89/games_eng_cw">Git repository</a> | 
+						<a target="_blank" href="../assets/PDFs/games_eng_gdd.pdf">Design document</a> | 
+						<a target="_blank" href="../assets/PDFs/games_eng_report.pdf">Full report</a>
+					</div>
+				</article>
+			</div>
+		</div>
+		
+		
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="../scripts/materialize.min.js"></script>
+		<script type="text/javascript" src="../assets/data/index.json"></script>
+		<script type="text/javascript" src="../scripts/pages_common.js"></script>
+		<script type="text/javascript" src="../scripts/slideshow.js"></script>
+	</body>
+</html>
