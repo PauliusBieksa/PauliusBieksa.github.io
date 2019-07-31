@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Rigid body simulation</title>
+		<meta name="author" content="Paulius Bieksa">
+		<meta name="description" content="A physics simulation focusing on collision detection and collision response.">
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="../styles/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/slideshow.css">
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row center article_title">
+				<h5 id="page_title">Rigid body simulation</h5>
+				<!-- Asociated tags are generated here by pages_common.js -->
+				<p id="date_stamp"><time datetime="2017-12">December 2017</time></p>
+			</div>
+			
+			<div class="row left article">
+				<!-- Empty column to center the article -->
+				<div class="col s0 m1 l2"></div>
+				<!---->
+				<article class="col s12 m10 l8">
+					<img src="../assets/images/physics.gif">
+					
+					<h5>Introduction</h5>
+					<p>This project is the final coursework for the Physics-Based Animation module. The module focused on teaching 
+						techniques and algorithms for building physics engines. Over the course of the module, concepts like particles, 
+						springs and cloth simulation were thought. The aim of the final coursework though, was the creation of a physics 
+						simulation that realistically represented a domino effect using cuboids.
+					</p>
+					<p>The biggest parts of the project were collision detection, collision response, friction and optimization.
+					</p>
+					
+					<h5>Collision detection and response</h5>
+					<p>These are the most difficult problems to solve in a physics simulation. Collision detection relies on 
+						the <a class="explanation"
+							href="https://en.wikipedia.org/wiki/Hyperplane_separation_theorem" 
+							target="_blank"><abbr title="In geometry, the hyperplane separation theorem is a theorem about disjoint convex sets in n-dimensional Euclidean space">
+							separating axis theorem</abbr></a>, 
+						which is used to find an axis that if two bodies were projected onto a gap could be found. If no such gap is found 
+						the bodies are intersecting. This is quite simple in 2 dimensions, where for squares only 4 axes need to be checked 
+						- the ones parallel to the edges of the squares. When working in 3 dimensions however, edge to edge, face to edge and 
+						face to corner collisions cannot be detected with jest the 6 axes parallel to the edges of the cuboids. 15 axes have 
+						to be checked to find out whether the objects are intersecting.
+					</p>
+					<p>Once a collision has been detected, an appropriate response can be used to simulate the collision. To do this 
+						the point of contact, the depth of intersection and the type of collision (face to edge, etc.) have to be determined. 
+						Once that information is calculated, the colliding objects are moved apart enough so they are no longer intersecting 
+						bu just touching. After that an appropriate impulse is calculated and applied to each cuboid.
+					</p>
+					
+					<h5>Friction</h5>
+					<p>To make collisions look realistic friction is essential. While there are many small details to take into account when 
+						implementing friction, the main idea is not very complex - depending on the material the colliding objects are made 
+						of and the force with which the objects are colliding, friction counteracts force that is perpendicular to the 
+						collision <abbr title="A vector representing the plane the collision took place on">normal</abbr>.
+					</p>
+					
+					<h5>Optimization</h5>
+					<p>Collision detection between every object in the scene has the complexity of O(n<sup>2</sup>). This means that every 
+						object added to the scene increases the computation time for collision detection exponentially. There are many 
+						approaches to solve this problem. This project implements two of the simpler ones - inactive objects and broad/narrow 
+						phase approach. The former works by recognizing when objects have stopped moving and meaningfully interacting with 
+						other objects and freezing them until another object interacts with it in some way. The latter is simply running a 
+						much less computationally expensive version collision algorithm to find all objects that could collide, and then 
+						using a precise approach on those objects.
+					</p>
+					
+					<h5>Results</h5>
+					<p>The resulting application is capable of simulating a domino effect on thousands of objects. This is due to the fact that 
+						once the object stops moving it is put into an inactive state and at any one point only about 15 - 20 objects are being 
+						fully simulated. The simulation looks realistic and runs smoothly.
+					</p>
+					<img src="../assets/images/dominoes1_reduced1.gif">
+					
+					<div class="footnote_links">
+						<a target="_blank" href="https://github.com/PauliusBieksa/Physics/">Git repository</a> | 
+						<a target="_blank" href="../assets/PDFs/physics_report.pdf">Full report</a>
+					</div>
+				</article>
+			</div>
+		</div>
+		
+		
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="../scripts/materialize.min.js"></script>
+		<script type="text/javascript" src="../assets/data/index.json"></script>
+		<script type="text/javascript" src="../scripts/pages_common.js"></script>
+		<script type="text/javascript" src="../scripts/slideshow.js"></script>
+	</body>
+</html>
