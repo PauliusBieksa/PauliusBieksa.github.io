@@ -21,7 +21,7 @@ a:hover {
 /* General */
 
 html {
-	font-family: 'Helvetica', Arial, 'sans serif';
+	font-family: 'Varela Round', sans-serif;
 	font-size: 14px;
 }
 
@@ -62,6 +62,10 @@ article h5 {
 
 .card .card-content {
 	height: 200%;
+}
+
+.card-title {
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.3), 1px -1px 0 rgba(0,0,0,0.3), -1px 1px 0 rgba(0,0,0,0.3), 1px 1px 0 rgba(0,0,0,0.3);  
 }
 
 
