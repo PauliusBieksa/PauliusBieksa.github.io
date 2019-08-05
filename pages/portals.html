@@ -31,10 +31,89 @@
 					<img src="../assets/images/portals/portals_reduced_big.gif">
 					
 					<h5>Introduction</h5>
+					<p>This project is the final coursework of the year 2 module - Computer Graphics. The coursework required 
+						researching and implementing graphical effects or features that are outside of the normal course material. 
+						The main feature chosen in this project is the portal effect, achieved using multi-pass rendering and a 
+						stencil buffer.
+					</p>
+					
+					<h5>The portals</h5>
+					<p>The effect used to create the portals is achieved by first rendering the scene without the portals, then 
+						rendering the shape of the portals (represented in the scene by two ovals) into the stencil buffer, and 
+						finally rendering the scene two additional times with modified transforms, once for each portal onto the 
+						areas marked by the stencil buffer.
+					</p>
+					<p>The stencil buffer is similar to other buffers used in the graphics pipeline, but instead of storing colour 
+						values or floats for depth information it stores integers. This makes the stencil buffer useful for marking 
+						areas of the screen. In the case of the portals, the stencil buffer is initialized with zeros, then the first 
+						portals is 'drawn' into the buffer as ones and the second as twos.
+					</p>
+					<!-- stencil buffer slideshow -->
+					<div class="slideshow_container">
+						<!-- All images -->
+						<div class="slides">
+							<img src="../assets/images/portals/stencil_buffer.jpg">
+							<div class="slide_caption">The stencil buffer.</div>
+						</div>
+						
+						<div class="slides">
+							<img src="../assets/images/portals/front_buffer.jpg">
+							<div class="slide_caption">Scene rendered using the stencil buffer.</div>
+						</div>
+						
+						<!-- Next and previous buttons -->
+						<a class="prev" onclick="change_slide(-1, 0)">&#10094</a>
+						<a class="next" onclick="change_slide(1, 0)">&#10095</a>
+					</div>
+					<p>The image drawn on the area marked for the portals has to match the perspective of the camera as if it was placed 
+						at the same angle and distance to the other portal. This is done by multiplying the transform matrices of the 
+						scene with the transform of one portal and the inverse of the other, the doing the opposite to render the other 
+						portal. The camera has to also ignore any objects and any parts of objects that are in front of the other portal. 
+						This is done in the fragment shader and the fragments that are determined to be in front of the portal are discarded.
+					</p>
+					<p>The resulting image should be drawn according to the diagram below:
+					</p>
+					<img src="../assets/images/portals/portal_transformations.png">
+					
+					<h5>Result</h5>
+					<p>The resulting scene achieves the desired effect of simulating the visual of portals. Additionally a colour correction 
+						post-processing effect is used, and some optimization is done to the code. The colour correction is done by switching 
+						to a different colour system changing the colour values and switching back. This post-processing effect can be used 
+						to change the way the scene is coloured during runtime. The optimization mainly focuses on reducing 
+						the number of OpenGL context switches.
+					</p>
+					
+					<!-- Colour correction slideshow -->
+					<div class="slideshow_container">
+						<!-- All images -->
+						<div class="slides">
+							<img src="../assets/images/portals/screenshot.png">
+							<div class="slide_caption">Normal render.</div>
+						</div>
+						
+						<div class="slides">
+							<img src="../assets/images/portals/greyscale.png">
+							<div class="slide_caption">Saturation reduced to zero.</div>
+						</div>
+						
+						<div class="slides">
+							<img src="../assets/images/portals/saturation.png">
+							<div class="slide_caption">Saturation increased to one.</div>
+						</div>
+						
+						<div class="slides">
+							<img src="../assets/images/portals/hue_shift.png">
+							<div class="slide_caption">Hue shift.</div>
+						</div>
+						
+						<!-- Next and previous buttons -->
+						<a class="prev" onclick="change_slide(-1, 1)">&#10094</a>
+						<a class="next" onclick="change_slide(1, 1)">&#10095</a>
+					</div>
 					
 					<div class="footnote_links">
-						<a target="_blank" href="https://github.com/PauliusBieksa/Physics/">Git repository</a> | 
-						<a target="_blank" href="../assets/PDFs/physics_report.pdf">Full report</a>
+						<a target="_blank" href="https://github.com/PauliusBieksa/Graphics_coursework/">Git repository</a> | 
+						<a target="_blank" href="../assets/PDFs/portals.pdf">Full report</a>
 					</div>
 				</article>
 			</div>

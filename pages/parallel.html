@@ -28,15 +28,15 @@
 				<article class="col s12 m10 l8">
 					<img src="../assets/images/cuda_simulation_400_cropped.gif">
 					<h5>Introduction</h5>
-					<p>Software optimisation is a field unto itself. There are many ways 
+					<p>Software optimization is a field unto itself. There are many ways 
 						to approach this problems in these field and all of them require 
-						deep understanding of the code being optimised and the hardware
+						deep understanding of the code being optimized and the hardware
 						the software is running on.
 					</p>
 					<p>This project attempts to speed up an <a class="explanation"
 						href="https://en.wikipedia.org/wiki/N-body_simulation" 
 						target="_blank"><abbr title="In physics and astronomy, an N-body simulation is a simulation of a dynamical system of particles, usually under the influence of physical forces">
-						n-body problem</abbr></a> simulation algorithm by parallelising it. 
+						n-body problem</abbr></a> simulation algorithm by parallelizing it. 
 						The n-body problem is the problem of predicting the individual motions 
 						of a group of celestial objects interacting with each other gravitationally. 
 						The problem requires calculating how each body affects each other body being 
@@ -44,17 +44,17 @@
 						each body as a point particle (a body with no spacial extension), and uses 
 						Newton’s laws of motion to calculate the movement of the bodies in 2D space.
 					</p>
-					<p>There were two approaches taken - CPU parallelisation using OpenMp and GPU parallelisation using CUDA.
+					<p>There were two approaches taken - CPU parallelization using OpenMp and GPU parallelization using CUDA.
 						The GPU approach was the focus of this project.
 					</p>
 					<h5>The algorithm</h5>
 					<p>
 						The n-body simulation requires each body to calculate forces exerted upon it by each other body.
-						This is perfect for parallelisation because each body can be simulated on a separate thread.
+						This is perfect for parallelization because each body can be simulated on a separate thread.
 						While on the CPU this could cause some <a class="explanation"
 						href="https://en.wikipedia.org/wiki/Race_condition" target="_blank"
 						<abbr title="A race condition or race hazard is the behavior of an electronics, software, or other system where the system's substantive behavior is dependent on the sequence or timing of other uncontrollable events. It becomes a bug when one or more of the possible behaviors is undesirable.">
-						data races</abbr></a> if not considered carefuly, the usual approach for parallel GPU programming 
+						data races</abbr></a> if not considered carefully, the usual approach for parallel GPU programming 
 						separates input and output data, which makes it much easier to protect against data races.
 					</p>
 					<p>
@@ -62,7 +62,7 @@
 						<ol type="I">
 							<li>Convert the current state of all particles into a single float array</li>
 							<li>Send the converted state to the GPU</li>
-							<li><i>The next steps are done concurently on the GPU</i>
+							<li><i>The next steps are done concurrently on the GPU</i>
 								<ol type="i">
 									<li>Calculate the force exerted by each other particle based on their current state</li>
 									<li>Store the forces to the correct GPU memory location</li>
