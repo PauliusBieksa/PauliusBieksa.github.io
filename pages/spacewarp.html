@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Spacewarp VR</title>
+		<meta name="author" content="Paulius Bieksa">
+		<meta name="description" content="A virtual reality data visualisation environment.">
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="../styles/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/slideshow.css">
+		<link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row center article_title">
+				<h5 id="page_title">Spacewarp VR</h5>
+				<!-- Asociated tags are generated here by pages_common.js -->
+				<p id="date_stamp"><time datetime="2018-04">December 2017</time></p>
+				
+				<img src="../assets/images/spacewarp/lens_reduced.gif">
+			</div>
+			
+			<div class="row left article">
+				<!-- Empty column to center the article -->
+				<div class="col s0 m1 l2"></div>
+				<!---->
+				<article class="col s12 m10 l8">
+					
+					<h5>Introduction</h5>
+					<p>Spacewarp VR is a proof of concept data visualization tool developed as part of a group project for Disney Research, 
+						facilitated by Edinburgh Napier University. The goal of the project was to explore the usefulness of a 'document lens' 
+						in virtual reality.
+					</p>
+					<p>The document lens is designed to help the user better navigate various graphs by letting the user zoom in to parts of 
+						them, yet still showing the bigger picture around the point of interest to preserve context. To do this, a shader program 
+						is used to warp an image of a virtual camera in the fragment stage of the graphics pipeline.
+					</p>
+					
+					<h5>The Team</h5>
+					<p>As mentioned before, this was a group project and therefore was made as a team effort. The team consisted of six people, 
+						later dropping down to five, as one member had left due to personal reasons. I was one of two main programmers in the 
+						group and I was responsible for making the lens itself. There was also a project manager, SCRUM master, asset creator, 
+						and the other programmer. The contributions of all members of the team and smooth management made this project a success.
+					</p>
+					
+					<h5>Result</h5>
+					<p>Despite one member of the team leaving in the middle of the project, the development went rather smoothly. At the end 
+						of the project the client was happy with the product and our project was the second best executed project in the school 
+						of computing.
+					</p>
+					<p>During the course of the project I learned to work with VR and how Unity 3D handles the graphics pipeline. I also got some 
+						experience working as part of a team.
+					</p>
+					
+						<!-- Screenshots slideshow -->
+						<div class="slideshow_container">
+							<!-- All images -->
+							<div class="slides">
+								<img src="../assets/images/spacewarp/Capture1.png">
+							</div>
+							
+							<div class="slides">
+								<img src="../assets/images/spacewarp/Capture2.png">
+							</div>
+							
+							<div class="slides">
+								<img src="../assets/images/spacewarp/Capture3.png">
+							</div>
+							
+							<div class="slides">
+								<img src="../assets/images/spacewarp/Capture4.png">
+							</div>
+							
+							<div class="slides">
+								<img src="../assets/images/spacewarp/Capture5.png">
+							</div>
+							
+							<div class="slides">
+								<img src="../assets/images/spacewarp/Capture6.png">
+							</div>
+							
+							<!-- Next and previous buttons -->
+							<a class="prev" onclick="change_slide(-1, 0)">&#10094</a>
+							<a class="next" onclick="change_slide(1, 0)">&#10095</a>
+						</div>
+						
+					<div class="footnote_links">
+						<a target="_blank" href="https://github.com/ske66/spacewarp-vr">Git repository</a> | 
+						<a target="_blank" href="../assets/PDFs/spacewarp.pdf">Full report</a>
+					</div>
+				</article>
+			</div>
+		</div>
+		
+		
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="../scripts/materialize.min.js"></script>
+		<script type="text/javascript" src="../assets/data/index.json"></script>
+		<script type="text/javascript" src="../scripts/pages_common.js"></script>
+		<script type="text/javascript" src="../scripts/slideshow.js"></script>
+	</body>
+</html>
