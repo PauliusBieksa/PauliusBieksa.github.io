@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Wavelength</title>
+		<meta name="author" content="Paulius Bieksa">
+		<meta name="description" content="A game developed for the 2017 Global Game Jam.">
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="../styles/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/slideshow.css">
+		<link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row center article_title">
+				<h5 id="page_title">Wavelength</h5>
+				<!-- Asociated tags are generated here by pages_common.js -->
+				<p id="date_stamp"><time datetime="2017-01">January 2017</time></p>
+			</div>
+			
+			<div class="row left article">
+				<!-- Empty column to center the article -->
+				<div class="col s0 m1 l2"></div>
+				<!---->
+				<article class="col s12 m10 l8">
+				
+					<img src="../assets/images/wavelength/wavelength_reduced.gif">
+					
+					<h5>GGJ 19</h5>
+					<p>This is the second game jam I have participated in. The team consisted of five people: four programmers, one 
+						of whom was me, and a friend who did the art for us. "Waves" was the theme that year, which lead to electromagnetic 
+						waves, which led to making a puzzle game called Wavelength. The game is built around navigating mazes. The player 
+						can change the layout of the maze by interacting with "transmitters". What came out was a compelling puzzle game 
+						which uncharacteristically for game jams even had a tutorial. All in all - 48 hours well spent.
+					</p>
+					
+					<br>
+					<br>
+					<br>
+					<!-- Screenshots slideshow -->
+					<div class="slideshow_container">
+						<!-- All images -->
+						<div class="slides">
+							<img src="../assets/images/wavelength/capture1.png">
+						</div>
+						
+						<div class="slides">
+							<img src="../assets/images/wavelength/capture2.png">
+						</div>
+						
+						<div class="slides">
+							<img src="../assets/images/wavelength/capture3.png">
+						</div>
+						
+						<div class="slides">
+							<img src="../assets/images/wavelength/capture4.png">
+						</div>
+						
+						<!-- Next and previous buttons -->
+						<a class="prev" onclick="change_slide(-1, 0)">&#10094</a>
+						<a class="next" onclick="change_slide(1, 0)">&#10095</a>
+					</div>
+					
+					<div class="footnote_links">
+						<a target="_blank" href="https://bitbucket.org/longname/ggj17/src/master/">Git repository</a> | 
+						<a target="_blank" href="https://globalgamejam.org/2017/games/wavelength-0">Game Jam page</a>
+					</div>
+				</article>
+			</div>
+		</div>
+		
+		
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="../scripts/materialize.min.js"></script>
+		<script type="text/javascript" src="../assets/data/index.json"></script>
+		<script type="text/javascript" src="../scripts/pages_common.js"></script>
+		<script type="text/javascript" src="../scripts/slideshow.js"></script>
+	</body>
+</html>
